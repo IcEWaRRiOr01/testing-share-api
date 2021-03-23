@@ -3,7 +3,7 @@ var shareButton = document.getElementById('share-button');
 shareButton.addEventListener('click', function () {
     // Проверка поддержки navigator.share
     if (navigator.share) {
-        console.log("Congrats! Your browser supports Web Share API")
+        alert("Congrats! Your browser supports Web Share API")
 
         // navigator.share принимает объект с URL, title или text
         navigator.share({
@@ -12,12 +12,12 @@ shareButton.addEventListener('click', function () {
             url: window.location.href
         })
         .then(function () {
-            console.log("Shareing successful")
+            alert("Shareing successful")
         })
         .catch(function () {
-            console.log("Shareing failed")
+            alert("Shareing failed")
         })
     } else {
-        console.log("Sorry! Your browser does not support Web Share API")
+        alert("Sorry! Your browser does not support Web Share API")
     }
 })
